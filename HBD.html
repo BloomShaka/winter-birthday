@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Winter! 🎂</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Fortnite-style grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+            text-shadow: 
+                0 0 10px #ff0080,
+                0 0 20px #ff0080,
+                0 0 30px #ff0080,
+                4px 4px 0px #000;
+            color: #fff;
+            letter-spacing: 3px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .victory-banner {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #000;
+            font-size: 2em;
+            padding: 15px 30px;
+            margin: 20px auto;
+            max-width: 600px;
+            border: 4px solid #000;
+            box-shadow: 0 8px 0 #000, 0 0 20px rgba(255, 215, 0, 0.5);
+            font-weight: 900;
+            letter-spacing: 2px;
+            animation: glowPulse 2s infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 8px 0 #000, 0 0 20px rgba(255, 215, 0, 0.5); }
+            50% { box-shadow: 0 8px 0 #000, 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            color: #00ffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Birthday Cake */
+        .cake-container {
+            margin: 60px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            position: relative;
+        }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.6));
+        }
+
+        .cake:after {
+            background: rgba(235,227,225,1);
+            border-radius: 200px;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 4px;
+        }
+
+        .velas {
+            background: rgba(255,255,255,1);
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -5px;
+            margin-top: -16.67px;
+            width: 10px;
+            height: 33.33px;
+        }
+
+        .velas:after,
+        .velas:before {
+            background: rgba(138, 43, 226, 0.6);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4.44px;
+        }
+
+        .velas:after {
+            top: 25%;
+            left: 0;
+        }
+
+        .velas:before {
+            top: 45%;
+            left: 0;
+        }
+
+        .fuego {
+            border-radius: 100%;
+            box-shadow: 0 0 40px 10px rgba(138, 43, 226, 0.4);
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            margin-left: -6.67px;
+            width: 13.33px;
+            height: 25px;
+        }
+
+        .fuego:nth-child(1) {
+            animation: fuegoFortnite 2s infinite;
+        }
+
+        .fuego:nth-child(2) {
+            animation: fuegoFortnite 1.5s infinite;
+        }
+
+        .fuego:nth-child(3) {
+            animation: fuegoFortnite 1s infinite;
+        }
+
+        .fuego:nth-child(4) {
+            animation: fuegoFortnite 0.5s infinite;
+        }
+
+        .fuego:nth-child(5) {
+            animation: fuegoFortnite 0.2s infinite;
+        }
+
+        @keyframes fuegoFortnite {
+            0% {
+                background: rgba(138, 43, 226, 0.8);
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                background: rgba(255, 0, 128, 0.3);
+                transform: translateY(-20px) scale(0);
+            }
+            100% {
+                background: rgba(138, 43, 226, 0.8);
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .cobertura {
+            background: rgba(30, 30, 30, 1);
+            border-radius: 50px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            margin-left: -55.56px;
+            margin-top: -10px;
+            width: 111.11px;
+            height: 25px;
+            z-index: 10;
+        }
+
+        .cobertura:after,
+        .cobertura:before {
+            background: rgba(30, 30, 30, 1);
+            border-radius: 200px;
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 20px;
+        }
+
+        .cobertura:after {
+            top: 13.33px;
+            right: 28.57px;
+        }
+
+        .cobertura:before {
+            top: 20px;
+            right: 18.18px;
+        }
+
+        .bizcocho {
+            background: rgba(138, 43, 226, 1);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -50px;
+            width: 100px;
+            height: 66.67px;
+        }
+
+        .bizcocho:after,
+        .bizcocho:before {
+            background: rgba(30, 30, 30, 0.8);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 10px;
+        }
+
+        .bizcocho:after {
+            top: 30%;
+            left: 0;
+        }
+
+        .bizcocho:before {
+            top: 60%;
+            left: 0;
+        }
+
+        .cake h1 {
+            color: #00ffff;
+            font-size: 1.2em;
+            margin-top: 10.8em;
+            font-weight: 900;
+            text-align: center;
+            width: 100%;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .cake p {
+            color: #ffd700;
+            font-size: 1.5em;
+            line-height: 2em;
+            font-weight: 900;
+            text-align: center;
+            width: 100%;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .loadout-card {
+            background: linear-gradient(135deg, rgba(30, 30, 50, 0.95) 0%, rgba(20, 20, 40, 0.95) 100%);
+            border: 3px solid #8a2be2;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loadout-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .loadout-card h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00ffff;
+            text-shadow: 3px 3px 0 #000;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 5px solid #ffd700;
+            padding: 20px;
+            margin: 15px 0;
+            font-size: 1.2em;
+            text-align: left;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item:hover {
+            transform: translateX(10px);
+            border-left-color: #00ffff;
+            background: rgba(138, 43, 226, 0.3);
+        }
+
+        .stat-label {
+            color: #ffd700;
+            font-weight: 900;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .bread-rain {
+            position: fixed;
+            font-size: 2em;
+            animation: fall 8s linear infinite;
+            z-index: -1;
+            filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.5));
+        }
+
+        @keyframes fall {
+            0% { 
+                top: -10%;
+                transform: rotate(0deg);
+            }
+            100% { 
+                top: 110%;
+                transform: rotate(360deg);
+            }
+        }
+
+        .battle-pass-section {
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(255, 0, 128, 0.2));
+            border-radius: 20px;
+            border: 4px solid #8a2be2;
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.4);
+            position: relative;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #8a2be2 0%, #ff0080 100%);
+            color: #fff;
+            border: 4px solid #000;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 0 #000, 0 0 20px rgba(138, 43, 226, 0.5);
+            position: relative;
+            top: 0;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 0 #000, 0 0 30px rgba(138, 43, 226, 0.8);
+        }
+
+        .btn:active {
+            top: 4px;
+            box-shadow: 0 2px 0 #000, 0 0 20px rgba(138, 43, 226, 0.5);
+        }
+
+        .message {
+            font-size: 1.5em;
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 3px solid #00ffff;
+            border-radius: 15px;
+            line-height: 1.8;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .message-header {
+            color: #ffd700;
+            font-size: 1.3em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .pizza-ban {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        #celebration {
+            font-size: 3em;
+            margin: 30px 0;
+            display: none;
+            animation: victoryPulse 1s infinite;
+            color: #ffd700;
+            text-shadow: 3px 3px 0 #000, 0 0 20px #ffd700;
+        }
+
+        @keyframes victoryPulse {
+            0%, 100% { transform: scale(1) rotate(-3deg); }
+            50% { transform: scale(1.3) rotate(3deg); }
+        }
+
+        .baldie-wifey {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8em;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 
+                5px 5px 0 #000,
+                -5px -5px 0 #000,
+                5px -5px 0 #000,
+                -5px 5px 0 #000,
+                0 0 40px #ff0080,
+                0 0 80px #ff0080,
+                0 0 120px #ff0080;
+            z-index: 10000;
+            display: none;
+            animation: baldieWifeyAnimation 2s ease-in-out;
+            letter-spacing: 10px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        @keyframes baldieWifeyAnimation {
+            0% { 
+                transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.3) rotate(10deg);
+            }
+            100% { 
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .rarity-legendary {
+            color: #ff8800;
+            text-shadow: 0 0 10px #ff8800;
+        }
+
+        .rarity-epic {
+            color: #b040ff;
+            text-shadow: 0 0 10px #b040ff;
+        }
+
+        .rarity-rare {
+            color: #00d5ff;
+            text-shadow: 0 0 10px #00d5ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 HAPPY BIRTHDAY WINTER! 🎂</h1>
+        <div class="victory-banner">⭐ VICTORY ROYALE ⭐</div>
+        <div class="subtitle">LEGENDARY SQUAD MEMBER UNLOCKED</div>
+
+        <div class="cake-container">
+            <div class="cake">
+                <div class="velas">
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                </div>
+                <div class="cobertura"></div>
+                <div class="bizcocho"></div>
+                <h1>Make a wish!</h1>
+                <p>Winter</p>
+            </div>
+        </div>
+
+        <div class="loadout-card">
+            <h2>🎯 PLAYER STATS</h2>
+            
+            <div class="stat-item">
+                <div class="stat-label">🍞 BREAD MASTERY - <span class="rarity-legendary">LEGENDARY</span></div>
+                Survives entirely on carbs. Scientists baffled. Has achieved 100% bread-based diet completion.
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">🖤 DARK MODE ACTIVATED - <span class="rarity-legendary">LEGENDARY</span></div>
+                Black is not just a color, it's a lifestyle. Permanent night mode equipped.
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">🎮 FORTNITE CHAMPION - <span class="rarity-legendary">LEGENDARY</span></div>
+                5000+ HOURS LOGGED. Building 90s faster than you can say "Where we droppin'?" Victory Royales on repeat. Absolute PRO status.
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label">😎 ROAST MASTER - <span class="rarity-epic">EPIC</span></div>
+                "Baldie" and "Blackie" emotes equipped. Deals emotional damage with perfect accuracy. Undefeated roast champion.
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-label"><span class="pizza-ban">🍕 PIZZA</span> - BANNED ITEM</div>
+                Item vaulted permanently. Never mention that name again. Lesson learned.
+            </div>
+        </div>
+
+        <div class="battle-pass-section">
+            <h2 style="color: #ffd700; text-shadow: 3px 3px 0 #000; font-size: 2.5em;">🏆 BIRTHDAY BATTLE PASS</h2>
+            <p style="font-size: 1.3em; margin: 20px 0;">
+                Another year = Another level up! New skins, new wins, new memories unlocked!
+            </p>
+            <button class="btn" onclick="celebrate()">🎉 CLAIM VICTORY ROYALE 🎉</button>
+        </div>
+
+        <div class="message">
+            <div class="message-header">📻 SQUAD COMMS FROM BALDIE:</div>
+            Winter, you're absolutely <span class="rarity-legendary">LEGENDARY</span>! 🖤<br><br>
+            Thanks for being the best teammate anyone could ask for - funny, fierce, and always carrying the squad (and me to the bed 😏)!<br><br>
+            Here's to more bread, more Victory Royales, and more epic adventures together!<br><br>
+            GG WP! Love you tons! 💜<br>
+            (Yes, even when you drop "Baldie" in squad chat)
+        </div>
+
+        <div id="celebration"></div>
+        <div class="baldie-wifey">BALDIE<br>WIFEY 💜</div>
+    </div>
+
+    <script>
+        // Create falling bread with Fortnite effects
+        function createBread() {
+            const bread = document.createElement('div');
+            bread.className = 'bread-rain';
+            bread.innerHTML = '🍞';
+            bread.style.left = Math.random() * 100 + '%';
+            bread.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            bread.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(bread);
+
+            setTimeout(() => bread.remove(), 13000);
+        }
+
+        // Generate bread rain
+        for (let i = 0; i < 15; i++) {
+            createBread();
+        }
+
+        setInterval(createBread, 1000);
+
+        function celebrate() {
+            const celebration = document.getElementById('celebration');
+            const baldieWifey = document.querySelector('.baldie-wifey');
+            
+            // Show BALDIE WIFEY
+            baldieWifey.style.display = 'block';
+            
+            celebration.style.display = 'block';
+            celebration.innerHTML = '🏆 VICTORY ROYALE! 🎂<br>WINTER WINS!';
+            
+            // Create Fortnite-style confetti
+            const emojis = ['🍞', '🖤', '🎮', '🎂', '✨', '⭐', '👑', '🏆'];
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                    confetti.style.position = 'fixed';
+                    confetti.style.fontSize = '2.5em';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '50%';
+                    confetti.style.animation = 'fall 3s linear';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.filter = 'drop-shadow(0 0 10px rgba(138, 43, 226, 0.8))';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 50);
+            }
+
+            setTimeout(() => {
+                celebration.style.display = 'none';
+                baldieWifey.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
